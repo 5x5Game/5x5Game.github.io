@@ -11,13 +11,6 @@
 <body>
 	<div id="fb-root"></div>
 	<div class="pull-left">
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v2.0";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
 		<button title="About" class="btn btn-success about" data-placement="bottom"><span class="glyphicon glyphicon-heart"></span></button>
 	</div>
 	<div class="pull-right">
@@ -119,7 +112,7 @@
 			</div>
 		</div>
 		<div>
-			<div class="fb-share-button" data-href="http://5x5game.github.io/"></div>
+			<div class="fb-share-button" data-href="http://5x5game.github.io/" data-width="128px"></div>
 		</div>
 	</div>
 	<div class="tutorial">
@@ -141,6 +134,7 @@
 	</div>
 	<footer>Copyright &copy; 2014 <a href="https://karim88.github.io" target="">Karim Oulad Chalha</a></footer>
 	<!--Scripts -->
+	<script type="text/javascript" src="js/fbSDK.js"></script>
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
