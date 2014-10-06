@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>5x5 Game</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-dialog.min.css">
+</head>
+<body>
+	<div class="pull-left">
+		<button title="About" class="btn btn-success about" data-placement="bottom"><span class="glyphicon glyphicon-heart"></span></button>
+	</div>
+	<div class="pull-right">
+			Time <label class="label label-primary">00:00:00</label>
+			Best Time <label class="label label-success">00:00:00</label>
+		</div>
+	<div class="jumbotron">
+		<h1>5X5 Game</h1>
+		<input type="button" onclick="reinit();" class="btn btn-primary" value="New Game">
+		
+	</div>
+	<p class="msg"></p>
+	<div class="container grid1">
+		<div class="grid-container">
+			<div id="row0" class="row">
+				<div x="0" y="0" id="cell0" class="cell">
+					<span></span>
+				</div>
+				<div x="0" y="1"  id="cell1" class="cell">
+					<span></span>
+				</div>
+				<div x="0" y="2" id="cell2" class="cell">
+					<span></span>
+				</div>
+				<div x="0" y="3" id="cell3" class="cell">
+					<span></span>
+				</div>
+				<div x="0" y="4" id="cell4" class="cell">
+					<span></span>
+				</div>
+			</div>
+			<div class="row"  id="row1">
+				<div x="1" y="0" id="cell0" class="cell">
+					<span></span>
+				</div>
+				<div x="1" y="1" id="cell1" class="cell">
+					<span></span>
+				</div>
+				<div x="1" y="2" id="cell2" class="cell">
+					<span></span>
+				</div>
+				<div x="1" y="3" id="cell3" class="cell">
+					<span></span>
+				</div>
+				<div x="1" y="4"  id="cell4" class="cell">
+					<span></span>
+				</div>
+			</div>
+			<div class="row"  id="row2">
+				<div x="2" y="0" id="cell0" class="cell">
+					<span></span>
+				</div>
+				<div x="2" y="1" id="cell1" class="cell">
+					<span></span>
+				</div>
+				<div x="2" y="2"  id="cell2" class="cell">
+					<span></span>
+				</div>
+				<div x="2" y="3" id="cell3" class="cell">
+					<span></span>
+				</div>
+				<div x="2" y="4" id="cell4" class="cell">
+					<span></span>
+				</div>
+			</div>
+			<div  id="row3" class="row">
+				<div x="3" y="0" id="cell0" class="cell">
+					<span></span>
+				</div>
+				<div x="3" y="1" id="cell1" class="cell">
+					<span></span>
+				</div>
+				<div x="3" y="2" id="cell2" class="cell">
+					<span></span>
+				</div>
+				<div x="3" y="3" id="cell3" class="cell">
+					<span></span>
+				</div>
+				<div x="3" y="4" id="cell4" class="cell">
+					<span></span>
+				</div>
+			</div>
+			<div  id="row4" class="row">
+				<div x="4" y="0" id="cell0" class="cell">
+					<span></span>
+				</div>
+				<div x="4" y="1" id="cell1" class="cell">
+					<span></span>
+				</div>
+				<div x="4" y="2" id="cell2" class="cell">
+					<span></span>
+				</div>
+				<div x="4" y="3" id="cell3" class="cell">
+					<span></span>
+				</div>
+				<div x="4" y="4" id="cell4" class="cell">
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tutorial">
+		<h1>How to play 5x5 Game?</h1>
+		<p>
+		Your objective in that game is to attend the number <span class="label label-default screenshot" data-toggle="tooltip" title=" ">25</span>,<br>
+		to do that you should fellow the rules:
+		you can go 3 step <abbr title="Vertically or Horizontally">V/H</abbr>,
+		or 2 step otherwise.<br>
+		any 1 step or 2 step <abbr title="Vertically or Horizontally">V/H</abbr> are not allowed.
+		</p>
+		<p><img src="img/yes.png" width="22"> Allowed moves</p>
+		<p><img src="img/no.png" width="22"> Not allowed moves</p>
+		<img class="tuto" src="img/tuto1.png" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 1">
+		<img class="tuto"  src="img/tuto2.png" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 2">
+		<img class="tuto"  src="img/tuto3.png" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 3">
+		<br>
+		<p><blockquote>Have Fun <img src="img/smile.svg" width="32"></blockquote></p>
+	</div>
+	<footer>Copyright &copy; 2014 <a href="https://karim88.github.io" target="">Karim Oulad Chalha</a></footer>
+	<!--Scripts -->
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-dialog.min.js"></script>
+	<script type="text/javascript" src="js/time.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
