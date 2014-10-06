@@ -41,8 +41,8 @@ var check = function(a, b){
 	return false;
 }
 var test = function(){
-	var x = $(this).attr('x');
-	var y = $(this).attr('y');
+	var x = $(this).attr('data-x');
+	var y = $(this).attr('data-y');
 	if(i == 0){
 		calcTime();
 	}
