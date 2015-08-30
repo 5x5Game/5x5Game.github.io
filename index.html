@@ -1,149 +1,191 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>5x5 Game</title>
-	<meta charset="utf-8">
+	<title>5x5game</title>
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-dialog.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="name" content="5x5Game">
+	<meta name="description" content="A simple game, hmmmm I have nothing to say, just play it and enjoy it ;)">
+	<meta name="keywords" content="5x5game, game, puzzle, karim oulad chalha, herr.linux88, firefox os, 2048 like">
+	<meta name="robots" content="index, follow">
+	<meta name="copyright" content="Karim Oulad Chalha 2014-2015">
+	<meta name="viewport" content="width=device-width" />
 </head>
 <body>
-	<div id="fb-root"></div>
-	<div class="pull-left">
-		<button title="About" class="btn btn-success about" data-placement="bottom"><span class="glyphicon glyphicon-heart"></span></button>
+  <nav class="blue">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo hide-on-med-and-down">5x5Game</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right">
+        <li class="waves-effect hide-on-med-and-down"><a class="about" href="#"><i class="material-icons">info</i> About</a></li>
+        <li class="waves-effect hide-on-med-and-down"><a class="tutorial" href="#"><i class="material-icons">help</i> How to play?</a></li>
+        <li class="waves-effect hide-on-med-and-down"><a class="bug" href="#"><i class="material-icons">bug_report</i>Report a bug!</a></li>
+       	<li class="blue lighten-3 tooltipped" data-position="bottom" data-tooltip="Current Time" data-delay="50"><span class="hide-on-med-and-down">Current Time:</span> <span class="time">00:00:00</span></li>
+       	<li class="green lighten-3 tooltipped" data-position="bottom" data-tooltip="Your Best Timing" data-delay="50"><span class="hide-on-med-and-down">Best Timing:</span> <span class="score">00:00:00</span></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li class="waves-effect"><a class="about blue-text" href="#"><i class="material-icons">info</i> About</a></li>
+        <li class="waves-effect"><a class="blue-text download" href="#"><i class="material-icons">file_downlod</i> Download</a></li>
+        <li class="waves-effect"><a class="blue-text tutorial" href="#"><i class="material-icons">help</i> How to play?</a></li>
+        <li class="waves-effect"><a class="blue-text bug" href="#"><i class="material-icons">bug_report</i>
+        Report a bug!</a></li>
+      </ul>
+    </div>
+  </nav>
+  <p class="center">
+  	<button class="btn blue waves-effect waves-light newGame"><i class="material-icons">games</i> <b>New Game</b></button>
+  	<button class="btn blue lighten-1 waves-effect waves-blue hide-on-med-and-down download"><i class="material-icons">file_download</i> <b>Download</b></button>
+  	<a href="https://github.com/5x5Game/5x5Game.github.io/archive/master.zip" target="_blank" class="btn blue lighten-2 waves-effect hide-on-med-and-down"><i class="material-icons">code</i> <b>Code Source</b></a>
+  </p>
+	<div class="container">
+		<table class="white-text">
+			<tr data-x="0">
+				<td data-y="0" class="cell waves-effect"></td>
+				<td data-y="1" class="cell waves-effect"></td>
+				<td data-y="2" class="cell waves-effect"></td>
+				<td data-y="3" class="cell waves-effect"></td>
+				<td data-y="4" class="cell waves-effect"></td>
+			</tr>
+			<tr data-x="1">
+				<td data-y="0" class="cell waves-effect"></td>
+				<td data-y="1" class="cell waves-effect"></td>
+				<td data-y="2" class="cell waves-effect"></td>
+				<td data-y="3" class="cell waves-effect"></td>
+				<td data-y="4" class="cell waves-effect"></td>
+			</tr>
+			<tr data-x="2">
+				<td data-y="0" class="cell waves-effect"></td>
+				<td data-y="1" class="cell waves-effect"></td>
+				<td data-y="2" class="cell waves-effect"></td>
+				<td data-y="3" class="cell waves-effect"></td>
+				<td data-y="4" class="cell waves-effect"></td>
+			</tr>
+			<tr data-x="3">
+				<td data-y="0" class="cell waves-effect"></td>
+				<td data-y="1" class="cell waves-effect"></td>
+				<td data-y="2" class="cell waves-effect"></td>
+				<td data-y="3" class="cell waves-effect"></td>
+				<td data-y="4" class="cell waves-effect"></td>
+			</tr>
+			<tr data-x="4">
+				<td data-y="0" class="cell waves-effect"></td>
+				<td data-y="1" class="cell waves-effect"></td>
+				<td data-y="2" class="cell waves-effect"></td>
+				<td data-y="3" class="cell waves-effect"></td>
+				<td data-y="4" class="cell waves-effect"></td>
+			</tr>
+		</table>
 	</div>
-	<div class="pull-right">
-			Time <label class="label label-primary">00:00:00</label>
-			Best Time <label class="label label-success">00:00:00</label>
+
+	<!-- modals -->
+	<!-- wins modal -->
+	<div id="modal2" class="modal">
+	<div class="modal-content">
+	  <h4>You Win!</h4>
+	  <p>Your score is <b class="score2 blue-text"></b> you can do better than that,<br>good luck next time.</p>
+	</div>
+	<div class="modal-footer green">
+	  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+	</div>
+	</div>
+
+	<!-- game over modal -->
+
+	<div id="modal1" class="modal">
+	<div class="modal-content">
+	  <h4>Game over!</h4>
+	  <p>You have reached <b class="score1 red-text"></b><br>good luck next time.</p>
+	</div>
+	<div class="modal-footer red">
+	  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+	</div>
+	</div>
+
+	<!-- about modal -->
+	<div id="a_modal" class="modal">
+	<div class="modal-content">
+	  <img src="img/logo.png" width="64" height="64">
+		<div class="row">
+			<div class="col m6 s12">
+			 	<h5>Version: 2.0</h5>
+			 	<p>A simple game...</p>
+			 	<p>Hmmmm I have nothing to say</p>
+			 	<p>Just play it and enjoy it ;).</p>
+			 	<p><i>Licensed under GPLv3</i></p>
+			</div>
+			<div class="col m6 s12">
+				<b>Find me at</b><br>
+				<a href="https://facebook.com/herr.linux88" target="_blank"><img src="img/facebook-square-icon.svg" width="32" height="32"></a>
+				<a href="https://twitter.com/herr_linux" target="_blank"><img src="img/twitter-icon.svg" width="32" height="32"></a>
+				<a href="https://google.com/+%D9%83%D8%B1%D9%8A%D9%85%D8%A3%D9%88%D9%84%D8%A7%D8%AF%D8%A7%D9%84%D8%B4%D9%84%D8%AD%D8%A9" target="_blank"><img src="img/googleplus-icon.svg" width="32" height="32"></a>
+				<a href="https://github.com/karim88" target="_blank"><img src="img/github-icon.svg" width="32" height="32"></a>
+				<p>Website: <a href="http://5x5game.github.io">5x5 Game</a></p>
+			</div>
 		</div>
-	<div class="jumbotron">
-		<h1>5X5 Game</h1>
-		<input type="button" onclick="reinit();" class="btn btn-primary" value="New Game">
-		<a href="https://github.com/5x5Game/5x5Game.github.io/archive/master.zip" target="_blank" class="btn btn-warning"><span class="glyphicon glyphicon-download"></span> Download</a>
-		
-	</div>
-	<p class="msg"></p>
-	<div class="container grid1">
-		<div class="grid-container">
-			<div class="row">
-				<div data-x="0" data-y="0" class="cell">
-					<span></span>
-				</div>
-				<div data-x="0" data-y="1"  class="cell">
-					<span></span>
-				</div>
-				<div data-x="0" data-y="2" class="cell">
-					<span></span>
-				</div>
-				<div data-x="0" data-y="3" class="cell">
-					<span></span>
-				</div>
-				<div data-x="0" data-y="4" class="cell">
-					<span></span>
-				</div>
-			</div>
-			<div class="row">
-				<div data-x="1" data-y="0" class="cell">
-					<span></span>
-				</div>
-				<div data-x="1" data-y="1" class="cell">
-					<span></span>
-				</div>
-				<div data-x="1" data-y="2" class="cell">
-					<span></span>
-				</div>
-				<div data-x="1" data-y="3" class="cell">
-					<span></span>
-				</div>
-				<div data-x="1" data-y="4" class="cell">
-					<span></span>
-				</div>
-			</div>
-			<div class="row">
-				<div data-x="2" data-y="0" class="cell">
-					<span></span>
-				</div>
-				<div data-x="2" data-y="1" class="cell">
-					<span></span>
-				</div>
-				<div data-x="2" data-y="2" class="cell">
-					<span></span>
-				</div>
-				<div data-x="2" data-y="3" class="cell">
-					<span></span>
-				</div>
-				<div data-x="2" data-y="4" class="cell">
-					<span></span>
-				</div>
-			</div>
-			<div class="row">
-				<div data-x="3" data-y="0" class="cell">
-					<span></span>
-				</div>
-				<div data-x="3" data-y="1" class="cell">
-					<span></span>
-				</div>
-				<div data-x="3" data-y="2" class="cell">
-					<span></span>
-				</div>
-				<div data-x="3" data-y="3" class="cell">
-					<span></span>
-				</div>
-				<div data-x="3" data-y="4" class="cell">
-					<span></span>
-				</div>
-			</div>
-			<div class="row">
-				<div data-x="4" data-y="0" class="cell">
-					<span></span>
-				</div>
-				<div data-x="4" data-y="1" class="cell">
-					<span></span>
-				</div>
-				<div data-x="4" data-y="2" class="cell">
-					<span></span>
-				</div>
-				<div data-x="4" data-y="3" class="cell">
-					<span></span>
-				</div>
-				<div data-x="4" data-y="4" class="cell">
-					<span></span>
-				</div>
-			</div>
-		</div>
-		<br>
-		<div class="addthis_native_toolbox"></div>
-	</div>
-	<div class="tutorial">
-		<h1>How to play 5x5 Game?</h1>
 		<p>
-		Your objective in that game is to attend the number <span class="label label-default screenshot" data-toggle="tooltip" title=" ">25</span>,<br>
+			 Copyright &copy; 2014-2015 <a href="https://karim88.github.io" target="_blank">Karim Oulad Chalha</a>
+		</p>
+	</div>
+	<div class="modal-footer blue">
+	  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+	</div>
+	</div>
+
+	<!-- tutorial modal -->
+	<div id="t_modal" class="modal">
+	<div class="modal-content">
+	  <h4>How to play 5x5Game</h4>
+	  <p>
+		The objective of this game is to attend the number <span class="blue white-text lbl" data-toggle="tooltip" title=" ">25</span>,<br>
 		to do that you should fellow the rules:
 		you can go 3 step <abbr title="Vertically or Horizontally">V/H</abbr>,
 		or 2 step otherwise.<br>
 		any 1 step or 2 step <abbr title="Vertically or Horizontally">V/H</abbr> are not allowed.
 		</p>
-		<p><img src="img/yes.png" width="22" alt="yes"> Allowed moves</p>
-		<p><img src="img/no.png" width="22" alt="no"> Not allowed moves</p>
-		<img class="tuto" src="img/tuto1.png" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 1">
-		<img class="tuto"  src="img/tuto2.png" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 2">
-		<img class="tuto"  src="img/tuto3.png" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 3">
+		<p><img src="img/yes.svg" width="22" alt="yes"> Allowed moves</p>
+		<p><img src="img/no.svg" width="22" alt="no"> Not allowed moves</p>
+		<img class="tuto materialboxed" src="img/tuto1.png" width="252" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 1">
+		<img class="tuto materialboxed"  src="img/tuto2.png" width="252" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 2">
+		<img class="tuto materialboxed"  src="img/tuto3.png" width="252" data-toggle="tooltip" data-placement="bottom" title="Click to zoom" alt="Tutorial image 3">
 		<br>
-		<blockquote>Have Fun <img src="img/smile.svg" width="32" alt="smile"></blockquote>
 	</div>
-	<footer>Copyright &copy; 2014 <a href="https://karim88.github.io" target="_blank">Karim Oulad Chalha</a></footer>
-	<!-- Begin W3Counter Tracking Code -->
-	<script type="text/javascript" src="https://www.w3counter.com/tracker.js"></script>
-	<script type="text/javascript">
-		w3counter(86542);
-	</script>
-	<!-- End W3Counter Tracking Code -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5432feb47bf52448" async></script>
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<div class="modal-footer orange">
+	  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+	</div>
+	</div>
+
+	<!-- bug modal -->
+	<div id="b_modal" class="modal">
+	<div class="modal-content">
+	  <h4>Report a bug!</h4>
+	  <p>If you find a bug, please report it here:<br><a href="https://github.com/5x5Game/5x5Game.github.io/issues" target="_blank">https://github.com/5x5Game/5x5Game.github.io/issues</a></p>
+	</div>
+	<div class="modal-footer orange">
+	  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+	</div>
+	</div>
+
+
+	<!-- download modal -->
+	<div id="d_modal" class="modal">
+	<div class="modal-content">
+	  <h4>Dowload</h4>
+	  <p><a href="https://marketplace.firefox.com/app/5x5-game" target="_blank"><i class="material-icons">file_download</i> FirefoxOS/Android/Windows/Linux</a></p>
+	  <p><a href="#" target="_blank"><i class="material-icons">file_download</i> Chrome App (Soon)</a></p>
+	</div>
+	<div class="modal-footer orange">
+	  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+	</div>
+	</div>
+
+
+	<!-- scripts -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap-dialog.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript" src="js/time.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>

@@ -1,7 +1,7 @@
 var lastBestTime = [59, 59, 59];
 var h=0, m=0, s=0;
 var intervalId;
-var calcTime = function(){
+var calcTime = function(ele){
 	intervalId = setInterval(function(){
 		if(s == 59){
 			s = -1;
@@ -16,12 +16,16 @@ var calcTime = function(){
 		}
 		s++;
 		(function($){
-			$('.label-primary').text(formating(h) + ":" + formating(m) + ":" + formating(s));
+			$(ele).text(formating(h) + ":" + formating(m) + ":" + formating(s));
 		})(jQuery);
 	}, 1000);
 };
 
-var clearTime = function(win){
+var gTime = function(){
+	return formating(h) + ":" + formating(m) + ":" + formating(s);
+};
+
+var clearTime = function(win, best, inited){
 	if(win){
 		if(h < lastBestTime[0] || (h === lastBestTime[0] && m < lastBestTime[1]) ||  (m === lastBestTime[1] && s < lastBestTime[2])){
 			lastBestTime =[h, m, s];
@@ -29,12 +33,12 @@ var clearTime = function(win){
 			$.cookie('m', m);
 			$.cookie('s', s);
 		}
-		$('.label-success').text(formating(lastBestTime[0]) + ":" + formating(lastBestTime[1]) + ":" + formating(lastBestTime[2]));
+		$(best).text(formating(lastBestTime[0]) + ":" + formating(lastBestTime[1]) + ":" + formating(lastBestTime[2]));
 	}
 	s = 0;
 	m = 0;
 	h = 0;
-	$('.label-primary').text(formating(h) + ":" + formating(m) + ":" + formating(s));
+	$(inited).text(formating(h) + ":" + formating(m) + ":" + formating(s));
 	clearInterval(intervalId);
 };
 
