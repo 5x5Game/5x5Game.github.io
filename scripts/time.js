@@ -21,9 +21,8 @@ const clearTime = (win, best, inited) => {
 			lastBestTime = time.format('HH:mm:ss');
 			localStorage.setItem('best_timing', time.format('HH:mm:ss'));
 		}
-		best.text(lastBestTime);
 	}
-    // best.text(lastBestTime);
+    best.text(lastBestTime || '00:00:00');
     time = moment('00:00:00', 'HH:mm:ss');
 	inited.text(time.format('HH:mm:ss'));
 	clearInterval(intervalId);
