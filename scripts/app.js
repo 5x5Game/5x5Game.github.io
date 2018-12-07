@@ -30,19 +30,23 @@
 
 		//check if is first use
 		if(typeof last == 'boolean'){
-			console.log('boolean');
 			return true;
 		}
 
-		if((Number(last[0])+3 == x && Number(last[1]) == y) || (Number(last[0])-3 == x && Number(last[1]) == y)){
+		if((Number(last[0]) + 3 === x && Number(last[1]) === y)
+			|| (Number(last[0])- 3 === x && Number(last[1]) === y)){
 			console.log('first');
 			return true;
 		}		
-		if((Number(last[1])+3 == y && Number(last[0]) == x) || (Number(last[1])-3 == y && Number(last[0]) == x)){
+		if((Number(last[1]) + 3 === y && Number(last[0]) === x)
+			|| (Number(last[1])- 3 === y && Number(last[0]) === x)){
 			console.log('second');
 			return true;
 		}
-		if((Number(last[1])-2 == y && Number(last[0])-2 == x) || (Number(last[1])+2 == y && Number(last[0])+2 == x) || (Number(last[1])-2 == y && Number(last[0])+2 == x) || (Number(last[1])+2 == y && Number(last[0])-2 == x)){
+		if((Number(last[1])- 2 === y && Number(last[0]) - 2 === x)
+			|| (Number(last[1]) + 2 === y && Number(last[0]) + 2 === x)
+			|| (Number(last[1]) - 2 === y && Number(last[0]) + 2 === x)
+			|| (Number(last[1]) + 2 === y && Number(last[0]) - 2 === x)){
 			console.log('third');
 			return true;
 		}
