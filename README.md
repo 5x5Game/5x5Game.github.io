@@ -1,8 +1,9 @@
-5x5Game.github.io v2
+5x5Game.github.io v3
 =============
 
-A simple game, hmmmm I have nothing to say, just play it and enjoy it ;).
+Just play it, challenge your friends to find solution. and enjoy it ;).
 
-![screen](http://5x5game.github.io/img/tuto1.png?raw=true =100x20)
-![screen](http://5x5game.github.io/img/tuto2.png?raw=true =100x20)
-![screen](http://5x5game.github.io/img/tuto3.png?raw=true =100x20)
+![screen](images/demo.gif)
+
+
+[The First one I made it in python](http://www.codeskulptor.org/?fbclid=IwAR3yLzK6I4doFhIipimCGS1KGr6iIYCbWDWflndZGVlnV-VquTo5-nFKL60#user26_CQBDqQLM7x_0.py)

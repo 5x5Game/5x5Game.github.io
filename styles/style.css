@@ -1,5 +1,5 @@
 body{
-	font-family: "Times New Roman", Times, serif;
+	font-family: 'Allerta', sans-serif;
 	overflow: hidden;
 }
 
@@ -8,34 +8,76 @@ body{
 	width: 50%;
 }
 
+.modal-content a {
+	color: rgba(182, 78, 56, 1) !important;
+}
+
+.modal-content a:hover {
+	color: rgba(182, 78, 56, .6) !important;
+}
+
 table{
 	background-color: #fff;
 	text-align: center;
 	font-size: 46px;
-	font-weight: bold;
+	font-weight: 900;
+}
+
+nav .brand-logo {
+	padding-left: 20px;
 }
 
 td{
-	background-color: #BBDEFB;
-	padding-top: 0px;
+	background-color: #507f7f55;
+	padding-top: 0;
 	text-align: center;
+	vertical-align: middle !important;
 	width: 15%;
 	height: 100%;
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 5px;
 	border-color: #fff;
+	font-size: 70px;
 	margin: 3px;
 }
 
+.adjust {
+	padding-left: 10px;
+}
+
 tr{
-	padding: 0px;
+	padding: 0;
+	border-bottom: 0 solid transparent;
 }
 
 
 .time, .score{
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+.primary {
+	background-color: rgba(182, 78, 56, 1) !important;
+	color: #f7f7f7 !important;
+}
+
+.secondary {
+	background-color: #507f7f !important;
+	color: #f7f7f7 !important;
+}
+
+.thirth {
+	background-color: rgba(182, 78, 56, .5);
+}
+
+.active {
+	background-color: #507f7f;
+}
+
+.current {
+	box-shadow: 0 0 15px 8px #fff inset;
+	background-color: rgba(182, 78, 56, 1) !important;
 }
 
 li a{
@@ -57,6 +99,7 @@ li a{
 }
 
 
+
 /*********************/
 
 @media only screen 
@@ -65,8 +108,8 @@ and (max-device-width : 480px) {
 	td{
 		margin: 1px !important;
 		padding: 1px !important;
-		max-height: 50px;
 		font-size: 30px;
+		max-width: 50px;
 	}
 
 	.container{
@@ -80,8 +123,8 @@ and (max-device-width : 1100px) {
 	td{
 		margin: 1px !important;
 		padding: 1px !important;
-		max-height: 50px;
-		font-size: 34px;
+		font-size: 60px;
+		max-width: 100px;
 	}
 
 	.container{
