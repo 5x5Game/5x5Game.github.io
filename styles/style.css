@@ -19,8 +19,8 @@ body{
 table{
 	background-color: #fff;
 	text-align: center;
-	font-size: 46px;
 	font-weight: 900;
+	margin-top: 50px;
 }
 
 nav .brand-logo {
@@ -98,7 +98,13 @@ li a{
 	border-radius: 1px;
 }
 
+.inline {
+	display: inline !important;
+}
 
+.demo {
+	width: 100% !important;
+}
 
 /*********************/
 
