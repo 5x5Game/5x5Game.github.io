@@ -1,9 +1,75 @@
-5x5Game.github.io v3
-=============
+# Nuxt 3 Minimal Starter
 
-Just play it, challenge your friends to find solution. and enjoy it ;).
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-![screen](images/demo.gif)
+## Setup
 
+Make sure to install the dependencies:
 
-[The First one I made it in python](http://www.codeskulptor.org/?fbclid=IwAR3yLzK6I4doFhIipimCGS1KGr6iIYCbWDWflndZGVlnV-VquTo5-nFKL60#user26_CQBDqQLM7x_0.py)
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

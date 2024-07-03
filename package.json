@@ -1,33 +1,24 @@
 {
-  "name": "5x5game.github.io",
-  "version": "3.0.1",
-  "description": "A puzzle like game.",
-  "main": "scripts/app.js",
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "deploy": "nuxt generate && npx gh-pages -d dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/5x5Game/5x5Game.github.io.git"
-  },
-  "keywords": [
-    "5x5game",
-    "game",
-    "puzzle",
-    "karim",
-    "oulad",
-    "chalha"
-  ],
-  "author": "Karim Oulad Chalha <ouladchalha.k@gmail.com>",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/5x5Game/5x5Game.github.io/issues"
-  },
-  "homepage": "https://github.com/5x5Game/5x5Game.github.io#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.5.0",
-    "jquery": "^3.3.1",
-    "materialize-css": "^1.0.0",
-    "moment": "^2.22.2"
+    "nuxt": "^3.12.3",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "gh-pages": "^6.1.1",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4"
   }
 }
