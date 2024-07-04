@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  LOOL
+  <TemplatesGrid size="normal" @clicked="data => console.log(data)" />
 </template>
 
 <style scoped>
