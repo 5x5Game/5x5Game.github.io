@@ -5,13 +5,14 @@ import { CellCount, type GridSize } from '@/types';
 import AtomsIconsFClock from '@/components/atoms/icons/FClock.vue';
 import AtomsIconsFSparkle from '@/components/atoms/icons/FSparkle.vue';
 import { useTime } from '@/composables/useTime';
+import { AtomsIconsFGame } from '#components';
 
 const size: GridSize = 'normal'
 const cellCount: CellCount = CellCount[size];
 const { cn } = useCn()
-const { table, check, lastSelected, numToXy, isGameOver, restart } = useGame()
-const { formatTime } = useTime()
 const gameStore = useGameStore()
+const { check, numToXy, isGameOver } = useGame(gameStore.getTable, toRef(gameStore, 'getLastSelected'))
+const { formatTime } = useTime()
 
 const selected_cells = ref<number[]>([])
 const values = ref<number[]>([])
@@ -30,14 +31,13 @@ const cellClicked = (num: number) => {
   }
   if (check(num, cellCount)) {
     selected_cells.value.push(num)
-    lastSelected.value = num
+    gameStore.setLastSelected(num)
     const [x, y] = numToXy(num, cellCount)
-    table[x][y] = 1
+    gameStore.updateTable(x, y, 1)
     values.value.push(curren_value.value)
     curren_value.value++
 
     if (isGameOver(num, cellCount)) {
-      console.log('Game over');
       gameOver.value = true
       clearInterval(intervalId!);
     }
@@ -53,26 +53,34 @@ const cellClicked = (num: number) => {
 }
 
 const restartGame = () => {
+  clearInterval(intervalId!)
   gameStore.setScore(0)
   gameOver.value = false
-  restart()
+  gameStore.restart()
   curren_value.value = 1
   values.value = []
   selected_cells.value = []
-  console.log(table, lastSelected.value);
 }
 
 </script>
 
 <template>
   <div class="flex justify-between items-center gap-2 w-full px-8">
-    <div class="header font-extrabold text-4xl text-primary">5X5Game</div>
+    <div class="flex justify-start gap-2 items-center">
+      <div class="header font-extrabold text-4xl text-primary">5X5Game</div>
+      <AtomsFButton
+        class="bg-primary hover:bg-primary-800"
+        text="New game"
+        :icon="AtomsIconsFGame"
+        @click="restartGame"
+      />
+    </div>
     <div class="flex justify-end gap-2 items-center">
       <MoleculesFTimer class="w-32" :time="score" :icon="AtomsIconsFClock"  />
       <MoleculesFTimer class="w-32" :time="best_score" :icon="AtomsIconsFSparkle" icon-color="text-yellow-200" />
     </div>
   </div>
-  <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="lastSelected">
+  <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="gameStore.getLastSelected">
     <template v-for="(cell, key) of selected_cells" :key="key" v-slot:[`grid-${cell}`]>
       <span :class="cn(`text-5xl font-bold`)">{{ values[key] }}</span>
     </template>

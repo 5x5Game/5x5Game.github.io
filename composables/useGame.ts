@@ -1,13 +1,4 @@
-export function useGame() {
-  let table = reactive([
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-    [0,0,0,0,0],
-  ]);
-  const lastSelected = ref(0)
-
+export function useGame(table: number[][], lastSelected: Ref<number>) {
   const numToXy = (num: number, size: number): number[] => {
     const x = Math.ceil(num / size) - 1
     let y = Math.ceil(num % size) - 1
@@ -97,21 +88,10 @@ export function useGame() {
     return true;
   }
 
-  const restart = () => {
-    for(let z = 0; z < table.length; z++){
-      for (let j = 0; j < table.length; j++) {
-        table[z][j] = 0;
-      }
-    }
-    lastSelected.value = 0;
-  }
 
   return {
-    table,
-    lastSelected,
     check,
     numToXy,
     isGameOver,
-    restart
   }
 }
