@@ -15,7 +15,7 @@ const emits = defineEmits(['button:click'])
       <div class="">
         <h1 class="text-4xl font-bold text-gray-800 pb-6 uppercase">{{ text }}</h1>
         <slot />
-        <AtomsFButton class="bg-primary hover:bg-primary-800 mt-4" text="New Game" :icon @click="emits('button:click')" />
+        <AtomsFButton class="bg-primary hover:bg-primary-800 mt-4" :text="$t('new_game')" :icon @click="emits('button:click')" />
       </div>
     </div>
   </div>

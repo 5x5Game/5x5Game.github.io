@@ -53,10 +53,12 @@ export default defineNuxtConfig({
     cssPath: "assets/css/tailwind.css",
   },
 
-  modules: [
-    "@nuxtjs/tailwindcss",
-    '@pinia/nuxt',
-  ],
+
+  modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt', '@nuxtjs/i18n'],
+  i18n: {
+    locales: ['ar', 'en', 'fr'],
+    defaultLocale: 'en',
+  },
   typescript: {
     tsConfig: {
       compilerOptions: {

@@ -5,7 +5,7 @@ import { CellCount, type GridSize } from '@/types';
 import AtomsIconsFClock from '@/components/atoms/icons/FClock.vue';
 import AtomsIconsFSparkle from '@/components/atoms/icons/FSparkle.vue';
 import { useTime } from '@/composables/useTime';
-import { AtomsIconsFGame } from '#components';
+import AtomsIconsFGame from '@/components/atoms/icons/FGame.vue';
 
 const size: GridSize = 'normal'
 const cellCount: CellCount = CellCount[size];
@@ -70,7 +70,7 @@ const restartGame = () => {
       <div class="header font-extrabold text-4xl text-primary">5X5Game</div>
       <AtomsFButton
         class="bg-primary hover:bg-primary-800"
-        text="New game"
+        :text="$t('new_game')"
         :icon="AtomsIconsFGame"
         @click="restartGame"
       />
