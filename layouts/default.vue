@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="bg-white flex justify-center items-center pt-7 px-4 h-lvh w-lvw">
+  <div class="bg-white flex flex-col justify-start items-center gap-6 pt-7 px-4 h-lvh w-lvw">
     <slot />
   </div>
 </template>

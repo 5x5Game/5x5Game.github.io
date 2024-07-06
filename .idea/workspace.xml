@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e8b5a17-166d-4c92-9f72-778aba6d1ba9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/composables/useGame.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/atoms/FButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/atoms/icons/FClock.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/atoms/icons/FSparkle.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/molecules/FPopupLayer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/molecules/FTimer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composables/useTime.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stores/gameStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/templates/Grid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/templates/Grid.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/atoms/GameOver.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/atoms/icons/FGame.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/templates/Grid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/templates/FGrid.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composables/useGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/composables/useGame.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
@@ -105,8 +117,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Composition API Component" />
         <option value="CSS File" />
+        <option value="Vue Composition API Component" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -260,11 +272,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/molecules" />
+      <recent name="$PROJECT_DIR$/components/atoms/icons" />
       <recent name="$PROJECT_DIR$/pages" />
       <recent name="$PROJECT_DIR$/.nuxt" />
       <recent name="$PROJECT_DIR$/vendor/moment" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/images" />
     </key>
   </component>
   <component name="RunManager">

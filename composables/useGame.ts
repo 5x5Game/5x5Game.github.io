@@ -97,11 +97,21 @@ export function useGame() {
     return true;
   }
 
+  const restart = () => {
+    for(let z = 0; z < table.length; z++){
+      for (let j = 0; j < table.length; j++) {
+        table[z][j] = 0;
+      }
+    }
+    lastSelected.value = 0;
+  }
+
   return {
     table,
     lastSelected,
     check,
     numToXy,
     isGameOver,
+    restart
   }
 }
