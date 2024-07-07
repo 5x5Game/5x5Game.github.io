@@ -14,8 +14,7 @@ const gameStore = useGameStore()
 const { check, numToXy, isGameOver } = useGame(gameStore.getTable, toRef(gameStore, 'getLastSelected'))
 const { formatTime } = useTime()
 
-const selected_cells = ref<number[]>([])
-const values = ref<number[]>([])
+const selected_cells = gameStore.getCells
 const curren_value = ref(1)
 const gameOver = ref(false)
 const score = computed<string>(_ => formatTime(gameStore.getScore))
@@ -24,24 +23,29 @@ const incrementTime = () => {
   gameStore.setScore(gameStore.getScore + 1);
 };
 let intervalId: NodeJS.Timeout | null = null;
+if (gameStore.getScore !== 0) {
+  intervalId = setInterval(incrementTime, 1000);
+}
 const cellClicked = (num: number) => {
 
-  if (selected_cells.value.length === 0) {
+  if (gameStore.getCells.length === 0) {
     intervalId = setInterval(incrementTime, 1000);
   }
   if (check(num, cellCount)) {
-    selected_cells.value.push(num)
+    gameStore.setCells({
+      index: num,
+      value: curren_value.value
+    })
     gameStore.setLastSelected(num)
     const [x, y] = numToXy(num, cellCount)
     gameStore.updateTable(x, y, 1)
-    values.value.push(curren_value.value)
     curren_value.value++
 
     if (isGameOver(num, cellCount)) {
       gameOver.value = true
       clearInterval(intervalId!);
     }
-    if (values.value.length === 25) {
+    if (gameStore.getCells.length === 25) {
       if (
         (gameStore.getScore < gameStore.getBestScore && gameStore.getBestScore !== 0)
         || gameStore.getBestScore === 0
@@ -54,12 +58,9 @@ const cellClicked = (num: number) => {
 
 const restartGame = () => {
   clearInterval(intervalId!)
-  gameStore.setScore(0)
   gameOver.value = false
   gameStore.restart()
   curren_value.value = 1
-  values.value = []
-  selected_cells.value = []
 }
 
 </script>
@@ -81,22 +82,22 @@ const restartGame = () => {
     </div>
   </div>
   <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="gameStore.getLastSelected">
-    <template v-for="(cell, key) of selected_cells" :key="key" v-slot:[`grid-${cell}`]>
-      <span :class="cn(`text-5xl font-bold`)">{{ values[key] }}</span>
+    <template v-for="(cell, key) of selected_cells" :key="key" v-slot:[`grid-${cell.index}`]>
+      <span :class="cn(`text-5xl font-bold`)">{{ cell.value }}</span>
     </template>
   </TemplatesFGrid>
 
-  <MoleculesFPopupLayer v-if="gameOver &&values.length !== 25"
+  <MoleculesFPopupLayer v-if="gameOver && selected_cells.length !== 25"
               text="game over"
               @button:click="restartGame">
     <p class="text-lg">You have reached
-      <span class="text-rose-600">{{ values.length }}</span> in <span class="text-rose-600">{{ score }}</span>
+      <span class="text-rose-600">{{ selected_cells.length }}</span> in <span class="text-rose-600">{{ score }}</span>
     </p>
     <p class="text-lg">Good luck next time.</p>
   </MoleculesFPopupLayer>
-  <MoleculesFPopupLayer v-if="values.length === 25" text="You win" @button:click="restartGame">
+  <MoleculesFPopupLayer v-if="selected_cells.length === 25" text="You win" @button:click="restartGame">
     <p class="text-lg">Congratulations!</p>
-    <p>You got <span class="text-rose-600">{{ values.length }}</span> in <span class="text-rose-600">{{ score }}</span>
+    <p>You got <span class="text-rose-600">{{ selected_cells.length }}</span> in <span class="text-rose-600">{{ score }}</span>
     </p>
   </MoleculesFPopupLayer>
 </template>

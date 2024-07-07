@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     baseURL: '/5x5Game.github.io/',
     head: {
       title: '5x5Game',
+      htmlAttrs: {
+        lang: 'en', // default language
+      },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },

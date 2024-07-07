@@ -4,3 +4,7 @@ export enum CellCount {
   normal = 5,
   hard = 6,
 }
+export interface GridCell {
+  index: number;
+  value: number;
+}
