@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e8b5a17-166d-4c92-9f72-778aba6d1ba9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/atoms/icons/FViewList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/molecules/FModal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/molecules/HoverList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/organisms/FPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composables/useMDParser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/about.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/issues.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tutorial.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/atoms/FButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/atoms/FButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
-    </list>
+    <list default="true" id="9e8b5a17-166d-4c92-9f72-778aba6d1ba9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

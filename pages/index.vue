@@ -26,7 +26,6 @@ const title = ref('')
 const content = ref('')
 const show = ref(false)
 
-const selected_cells = gameStore.getCells
 const curren_value = ref(1)
 const gameOver = ref(false)
 const score = computed<string>(_ => formatTime(gameStore.getScore))
@@ -106,22 +105,22 @@ const openModal = async (id: string) => {
     </div>
   </div>
   <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="gameStore.getLastSelected">
-    <template v-for="(cell, key) of selected_cells" :key="key" v-slot:[`grid-${cell.index}`]>
+    <template v-for="(cell, key) of gameStore.getCells" :key="key" v-slot:[`grid-${cell.index}`]>
       <span :class="cn(`text-5xl font-bold`)">{{ cell.value }}</span>
     </template>
   </TemplatesFGrid>
 
-  <MoleculesFPopupLayer v-if="gameOver && selected_cells.length !== 25"
+  <MoleculesFPopupLayer v-if="gameOver && gameStore.getCells.length !== 25"
               text="game over"
               @button:click="restartGame">
     <p class="text-lg">You have reached
-      <span class="text-rose-600">{{ selected_cells.length }}</span> in <span class="text-rose-600">{{ score }}</span>
+      <span class="text-rose-600">{{ gameStore.getCells.length }}</span> in <span class="text-rose-600">{{ score }}</span>
     </p>
     <p class="text-lg">Good luck next time.</p>
   </MoleculesFPopupLayer>
-  <MoleculesFPopupLayer v-if="selected_cells.length === 25" text="You win" @button:click="restartGame">
+  <MoleculesFPopupLayer v-if="gameStore.getCells.length === 25" text="You win" @button:click="restartGame">
     <p class="text-lg">Congratulations!</p>
-    <p>You got <span class="text-rose-600">{{ selected_cells.length }}</span> in <span class="text-rose-600">{{ score }}</span>
+    <p>You got <span class="text-rose-600">{{ gameStore.getCells.length }}</span> in <span class="text-rose-600">{{ score }}</span>
     </p>
   </MoleculesFPopupLayer>
   <MoleculesHoverList :icon="AtomsIconsFViewList" :items="items" @li:click="openModal" />
