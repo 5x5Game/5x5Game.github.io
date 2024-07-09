@@ -6,6 +6,8 @@ import AtomsIconsFClock from '@/components/atoms/icons/FClock.vue';
 import AtomsIconsFSparkle from '@/components/atoms/icons/FSparkle.vue';
 import { useTime } from '@/composables/useTime';
 import AtomsIconsFGame from '@/components/atoms/icons/FGame.vue';
+import AtomsIconsFViewList from '@/components/atoms/icons/FViewList.vue';
+import { useMDParser } from '@/composables/useMDParser';
 
 const size: GridSize = 'normal'
 const cellCount: CellCount = CellCount[size];
@@ -13,6 +15,16 @@ const { cn } = useCn()
 const gameStore = useGameStore()
 const { check, numToXy, isGameOver } = useGame(gameStore.getTable, toRef(gameStore, 'getLastSelected'))
 const { formatTime } = useTime()
+const { parse } = useMDParser()
+
+const items: Record<string, string> = {
+  about: 'About',
+  tutorial: 'How to play',
+  issues: 'Issues'
+}
+const title = ref('')
+const content = ref('')
+const show = ref(false)
 
 const selected_cells = gameStore.getCells
 const curren_value = ref(1)
@@ -62,7 +74,19 @@ const restartGame = () => {
   gameStore.restart()
   curren_value.value = 1
 }
-
+const openModal = async (id: string) => {
+  show.value = true
+  const { data } = await useAsyncData<Promise<string>>(id, async () => {
+    const response: any = await $fetch(`/${id}.md`)
+    return response
+  })
+  console.log(data.value);
+  const d = computed(_ => parse(data.value!))
+  console.log(d.value);
+  title.value = items[id]
+  content.value = d.value
+  console.log(id);
+}
 </script>
 
 <template>
@@ -100,8 +124,8 @@ const restartGame = () => {
     <p>You got <span class="text-rose-600">{{ selected_cells.length }}</span> in <span class="text-rose-600">{{ score }}</span>
     </p>
   </MoleculesFPopupLayer>
+  <MoleculesHoverList :icon="AtomsIconsFViewList" :items="items" @li:click="openModal" />
+  <MoleculesFModal :show @close="show = false">
+    <OrganismsFPage :title :content />
+  </MoleculesFModal>
 </template>
-
-<style scoped>
-
-</style>
