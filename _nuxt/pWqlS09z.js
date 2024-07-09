@@ -1,0 +1,1 @@
+import{d as a,a5 as l,v as o,$ as n,t as c}from"./DNwCzvfW.js";const r={class:"bg-white flex flex-col justify-start items-center gap-6 pt-7 px-4 h-lvh w-lvw"},_=a({__name:"default",setup(p){const{locale:e,setLocale:t}=l();return t(e.value),(s,f)=>(c(),o("div",r,[n(s.$slots,"default")]))}});export{_ as default};
