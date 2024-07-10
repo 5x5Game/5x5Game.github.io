@@ -1,4 +1,6 @@
 import type { GridCell } from '@/types';
+import nuxtStorage from 'nuxt-storage';
+
 
 export const useGameStore = defineStore("gameStore", {
   state: () => ({
@@ -16,51 +18,51 @@ export const useGameStore = defineStore("gameStore", {
   }),
   getters: {
     getScore: state => {
-      if (localStorage.getItem('score')) {
-        state.score = Number(localStorage.getItem('score'))
+      if (nuxtStorage.localStorage.getData('score')) {
+        state.score = Number(nuxtStorage.localStorage.getData('score'))
       }
       return state.score;
     },
     getBestScore: state => {
-      if (localStorage.getItem('best_score')) {
-        state.best_score = Number(localStorage.getItem('best_score'))
+      if (nuxtStorage.localStorage.getData('best_score')) {
+        state.best_score = Number(nuxtStorage.localStorage.getData('best_score'))
       }
       return state.best_score
     },
     getTable: state => {
-      if (localStorage.getItem('table')) {
-        state.table = JSON.parse(localStorage.getItem('table')!)
+      if (nuxtStorage.localStorage.getData('table')) {
+        state.table = JSON.parse(nuxtStorage.localStorage.getData('table')!)
       }
       return state.table;
     },
     getLastSelected: state => {
-      if (localStorage.getItem('lastSelected')) {
-        state.lastSelected = Number(localStorage.getItem('lastSelected'))
+      if (nuxtStorage.localStorage.getData('lastSelected')) {
+        state.lastSelected = Number(nuxtStorage.localStorage.getData('lastSelected'))
       }
       return state.lastSelected
     },
     getCells: state => {
-      if (localStorage.getItem('cells')) {
-        state.cells = JSON.parse(localStorage.getItem('cells')!)
+      if (nuxtStorage.localStorage.getData('cells')) {
+        state.cells = JSON.parse(nuxtStorage.localStorage.getData('cells')!)
       }
       return state.cells
     },
   },
   actions: {
     setScore(value: number) {
-      localStorage.setItem('score', value.toString())
+      nuxtStorage.localStorage.setData('score', value.toString())
       this.score = value
     },
     setBestScore(value: number) {
-      localStorage.setItem('best_score', value.toString())
+      nuxtStorage.localStorage.setData('best_score', value.toString())
       this.best_score = value
     },
     updateTable(x: number, y: number, value: number) {
       this.table[x][y] = value
-      localStorage.setItem('table', JSON.stringify(this.table))
+      nuxtStorage.localStorage.setData('table', JSON.stringify(this.table))
     },
     setLastSelected(value: number) {
-      localStorage.setItem('lastSelected', value.toString())
+      nuxtStorage.localStorage.setData('lastSelected', value.toString())
       this.lastSelected = value
     },
     restart() {
@@ -72,15 +74,15 @@ export const useGameStore = defineStore("gameStore", {
       this.setLastSelected(0);
       this.setScore(0)
       this.cells = []
-      localStorage.setItem('cells', JSON.stringify(this.cells))
-      localStorage.setItem('table', JSON.stringify(this.table))
+      nuxtStorage.localStorage.setData('cells', JSON.stringify(this.cells))
+      nuxtStorage.localStorage.setData('table', JSON.stringify(this.table))
     },
     setCells(value: GridCell) {
       this.cells.push({
         index: value.index,
         value: value.value
       })
-      localStorage.setItem('cells', JSON.stringify(this.cells))
+      nuxtStorage.localStorage.setData('cells', JSON.stringify(this.cells))
     },
   }
 })

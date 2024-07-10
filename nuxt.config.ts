@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-07-06",
 
   // Disable server-side rendering
-  ssr: false,
+  ssr: true,
 
   app: {
     baseURL: '/5x5Game.github.io/',

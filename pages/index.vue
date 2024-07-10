@@ -79,12 +79,9 @@ const openModal = async (id: string) => {
     const response: any = await $fetch(`/${id}.md`)
     return response
   })
-  console.log(data.value);
   const d = computed(_ => parse(data.value!))
-  console.log(d.value);
   title.value = items[id]
   content.value = d.value
-  console.log(id);
 }
 </script>
 
