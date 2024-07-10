@@ -5,8 +5,14 @@ const { locale, setLocale } = useI18n()
 const localeRoute = useLocaleRoute()
 const { t } = useI18n()
 
-setLocale(locale.value)
+await setLocale(locale.value)
 
+useHead({
+  htmlAttrs: {
+    lang: locale.value,
+    dir: locale.value === 'ar' ? 'rtl' : 'ltr',
+  }
+})
 const items: Record<string, string> = {
   index: t('home'),
   about: t('about.page'),
