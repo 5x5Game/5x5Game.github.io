@@ -1,3 +1,52 @@
 {
-  "new_game": "Nouveaux jeux"
+  "home": "Le jeu",
+  "new_game": "Nouvelle partie",
+  "reached": "Vous avez atteint",
+  "in": "en",
+  "got": "Vous avez obtenu",
+  "game_over": "Fin du jeu",
+  "you_won": "vous avez gagné",
+  "congratulations": "Félicitations !",
+  "good_luck": "Bonne chance la prochaine fois.",
+  "about": {
+    "page": "À propos",
+    "intro_1": "Défiez votre esprit avec une expérience de puzzle unique !",
+    "intro_2": "Dans 5x5GAME, naviguez dans une grille en utilisant des pas stratégiques pour atteindre le numéro cible : 25.",
+    "awaits_you": "Voici ce qui vous attend :",
+    "intriguing_movement": "Mouvement intrigant :",
+    "calculated_leaps": "Effectuez des sauts calculés à travers la grille.",
+    "move_vertical_horizontal": "Déplacez-vous verticalement ou horizontalement de ",
+    "three_steps": "3 pas",
+    "at_once": "à la fois.",
+    "diagonal_thinking": "Testez votre réflexion diagonale avec",
+    "two_steps": "2 pas",
+    "diagonal_jumps": "sauts diagonaux.",
+    "sharpen_your_mind": "Aiguisez votre esprit :",
+    "plan_your_moves": "Planifiez vos mouvements avec soin, en tenant compte à la fois de la distance et des sauts disponibles.",
+    "no_hesitation": "Pas de place pour l'hésitation :",
+    "game_progresses": "Une fois que vous atterrissez, le jeu progresse, nécessitant une réflexion rapide et des manœuvres stratégiques.",
+    "ready_to_test": "Prêt à tester vos compétences ? Plongez dans 5x5GAME et voyez si vous pouvez conquérir la grille !"
+  },
+  "issues": {
+    "page": "Problèmes",
+    "issue_github": "Si vous trouvez un bug, veuillez le signaler ici :"
+  },
+  "tutorial": {
+    "page": "Comment jouer",
+    "welcome": "Bienvenue dans 5x5GAME, une expérience de puzzle unique conçue pour mettre à l'épreuve votre réflexion stratégique et vos compétences en résolution de problèmes. Naviguez à travers une grille et atteignez le numéro cible, 25, en utilisant des mouvements stratégiques. Ce guide vous présentera les bases du jeu, les règles et les stratégies pour vous aider à réussir.",
+    "game_overview": "Aperçu du jeu :",
+    "game_overview_1": "Dans 5x5GAME, votre objectif est de naviguer dans une grille 5x5 et d'atteindre le numéro cible, 25. Vous devez vous déplacer stratégiquement à travers la grille, en faisant des sauts calculés à la fois verticalement, horizontalement et en diagonale.",
+    "how_to_play": "Comment jouer",
+    "starting_the_game": "Début du jeu :",
+    "starting_the_game_1": "Lorsque vous démarrez le jeu, vous verrez une grille 5x5. et vous devez cliquer sur une case vide pour commencer.",
+    "movement_rules": "Règles de déplacement :",
+    "vertical_horizontal_moves": "Mouvements verticaux et horizontaux :",
+    "vertical_horizontal_moves_1": "Vous pouvez vous déplacer verticalement ou horizontalement de 3 pas à la fois. Par exemple, si votre dernier mouvement est sur la case 1x1, vous pouvez vous déplacer sur la case 1x4 ou 4x1, à condition que ces cases soient dans la grille et non déjà visitées.",
+    "diagonal_moves": "Mouvements diagonaux :",
+    "diagonal_moves_1": "Vous pouvez vous déplacer en diagonale de 2 pas à la fois. Par exemple, si vous êtes sur la case 3x3, vous pouvez vous déplacer sur la case 1x1, 5x1, 1x5 ou 5x5, à condition que ces cases soient dans la grille et non déjà visitées.",
+    "objective": "Objectif :",
+    "objective_1": "Planifiez vos mouvements pour atteindre le numéro cible, 25. Évitez de atterrir sur la même case plus d'une fois.",
+    "gameplay": "Jeu :",
+    "gameplay_1": "Cliquez ou appuyez sur une case pour la visiter. Seuls les mouvements valides seront autorisés. Pensez à l'avance et planifiez votre chemin pour vous assurer de pouvoir atteindre l'objectif."
+  }
 }

@@ -3,9 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2024-07-06",
 
-  // Disable server-side rendering
   ssr: true,
-
   app: {
     baseURL: '/5x5Game.github.io/',
     head: {
@@ -71,5 +69,5 @@ export default defineNuxtConfig({
         }
       }
     }
-  }
+  },
 })

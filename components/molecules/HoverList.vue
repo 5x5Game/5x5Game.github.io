@@ -17,7 +17,7 @@ const click = (item: string) => {
 </script>
 
 <template>
-  <div class="absolute bottom-0 right-0">
+  <div class="fixed bottom-0 right-0">
     <div class="flex items-end p-4 m-4">
       <AtomsFButton
         :icon
@@ -35,7 +35,7 @@ const click = (item: string) => {
         class="absolute bottom-20 right-4 w-full bg-white shadow-lg rounded mr-4"
       >
         <li v-for="(item, key, index) of items" :key="index"
-            class="py-1 px-8 hover:bg-primary hover:text-white w-full transition"
+            class="py-1 px-8 hover:bg-primary hover:text-white w-full transition cursor-pointer"
             @click="click(key)"
         >
           {{ item }}

@@ -1,5 +1,6 @@
 **Challenge your mind with a unique puzzle experience!** In 5x5GAME, navigate a grid using strategic steps to reach the goal number: 25.
 
+
 ## Here's what awaits you:
 
 - **Intriguing Movement:** Take calculated leaps across the grid. 

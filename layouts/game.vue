@@ -13,7 +13,6 @@ const items: Record<string, string> = {
   tutorial: t('tutorial.page'),
   issues: t('issues.page'),
 }
-
 const goTo = (link: string) => {
   const route = localeRoute({ name: link })
   if (route) {
@@ -27,16 +26,14 @@ const goTo = (link: string) => {
     <div class="flex justify-between items-center gap-2 w-full px-8">
       <div class="flex justify-start gap-2 items-center">
         <div class="header font-extrabold text-4xl text-primary">5X5Game</div>
+        <slot name="start" />
       </div>
       <div class="flex justify-end gap-2 items-center">
         <slot name="score" />
         <slot name="best_score" />
       </div>
     </div>
-    <div class="container mt-12">
-      <slot />
-    </div>
+    <slot />
     <MoleculesHoverList :icon="AtomsIconsFViewList" :items="items" @li:click="goTo" />
-
   </div>
 </template>

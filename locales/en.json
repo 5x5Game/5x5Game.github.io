@@ -1,3 +1,52 @@
 {
-  "new_game": "New Game"
+  "home": "The game",
+  "new_game": "New Game",
+  "reached": "You have reached",
+  "in": "in",
+  "got": "You got",
+  "game_over": "game over",
+  "you_won": "you won",
+  "congratulations": "Congratulations!",
+  "good_luck": "Good luck next time.",
+  "about": {
+    "page": "About",
+    "intro_1": "Challenge your mind with a unique puzzle experience!",
+    "intro_2": "In 5x5GAME, navigate a grid using strategic steps to reach the goal number: 25.",
+    "awaits_you": "Here's what awaits you:",
+    "intriguing_movement": "Intriguing Movement:",
+    "calculated_leaps": "Take calculated leaps across the grid.",
+    "move_vertical_horizontal": "Move vertically or horizontally by ",
+    "three_steps": "3 steps",
+    "at_once": "at once.",
+    "diagonal_thinking": "Test your diagonal thinking with",
+    "two_steps": "2 steps",
+    "diagonal_jumps": "diagonal jumps.",
+    "sharpen_your_mind": "Sharpen your mind:",
+    "plan_your_moves": "Plan your moves carefully, considering both distance and available jumps.",
+    "no_hesitation": "No room for hesitation:",
+    "game_progresses": "Once you land, the game progresses, requiring quick thinking and strategic maneuvering.",
+    "ready_to_test": "Ready to test your skills? Dive into 5x5GAME and see if you can conquer the board!"
+  },
+  "issues": {
+    "page": "Issues",
+    "issue_github": "If you find a bug, please report it here:"
+  },
+  "tutorial": {
+    "page": "How to play",
+    "welcome": "Welcome to 5x5GAME, a unique puzzle experience designed to challenge your strategic thinking and problem-solving skills. Navigate through a grid and reach the goal number, 25, using strategic moves. This guide will walk you through the basics of the game, the rules, and strategies to help you succeed.",
+    "game_overview": "Game Overview:",
+    "game_overview_1": "In 5x5GAME, your objective is to navigate a 5x5 grid and reach the goal number, 25. You must move strategically across the grid, taking calculated leaps both vertically, horizontally, and diagonally.",
+    "how_to_play": "How to Play",
+    "starting_the_game": "Starting the Game:",
+    "starting_the_game_1": "When you start the game, you'll see a 5x5 grid. and you need to click on an empty tile to start",
+    "movement_rules": "Movement Rules:",
+    "vertical_horizontal_moves": "Vertical and Horizontal Moves:",
+    "vertical_horizontal_moves_1": "You can move vertically or horizontally by 3 steps at a time. For example, if your last move is on tile 1x1, you can move to tile 1x4 or 4x1, provided these tiles are within the grid and not already visited.",
+    "diagonal_moves": "Diagonal Moves:",
+    "diagonal_moves_1": "You can move diagonally by 2 steps at a time. For example, if you are on tile 3x3, you can move to tile 1x1, 5x1, 1x5 or 5x5, provided these tiles are within the grid and not already visited.",
+    "objective": "Objective:",
+    "objective_1": "Plan your moves to reach the goal number, 25. Avoid landing on the same tile more than once.",
+    "gameplay": "Gameplay:",
+    "gameplay_1": "Click or tap on a tile to visit it. Only valid moves will be allowed. Think ahead and plan your path to ensure you can reach the goal."
+  }
 }
