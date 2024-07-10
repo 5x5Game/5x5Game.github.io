@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
-import { attrs } from 'ultrahtml';
 
 const { cn } = useCn()
 

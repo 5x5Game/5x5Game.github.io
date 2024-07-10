@@ -11,11 +11,5 @@ export default defineI18nConfig(() => {
       en,
       fr
     },
-    locales: [
-      { "code": "en", "iso": "en-US", "file": "en.json", "dir": "ltr" },
-      { "code": "ar", "iso": "ar-MA", "file": "ar.json", "dir": "rtl" },
-      { "code": "fr", "iso": "fr-FR", "file": "fr.json" }
-    ],
-
   }
 })

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AtomsIconsFViewList from '@/components/atoms/icons/FViewList.vue';
 import type { Component } from 'vue';
 
 defineProps<{

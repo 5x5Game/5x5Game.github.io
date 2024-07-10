@@ -3,7 +3,6 @@ import { useCn } from '~/composables/useCn';
 import { CellCount, type GridSize } from '@/types';
 
 const { cn } = useCn()
-const { check } = useGame()
 
 const props = defineProps<{
   size: GridSize,

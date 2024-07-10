@@ -1,5 +1,9 @@
+V4
+- New UI: more minimalist
+- Using Nuxt 3/Vue 3 instead of jQuery
+- Adding support to i18n
 v3
-- Refactory and optimizing the whole application.
+- Refactoring and optimizing the whole application.
 - Changing primary and secondary colors.
 v2
 - fixing some double click bug
