@@ -27,6 +27,7 @@ let intervalId: NodeJS.Timeout | null = null;
 if (gameStore.getScore !== 0) {
   intervalId = setInterval(incrementTime, 1000);
 }
+
 const cellClicked = (num: number) => {
 
   if (gameStore.getCells.length === 0) {
@@ -56,7 +57,6 @@ const cellClicked = (num: number) => {
     }
   }
 }
-
 const restartGame = () => {
   clearInterval(intervalId!)
   gameOver.value = false

@@ -5,7 +5,8 @@ export default defineNuxtConfig({
 
   ssr: true,
   app: {
-    baseURL: '/5x5Game.github.io/',
+    baseURL: '/',
+    layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
       title: '5x5Game',
       htmlAttrs: {
@@ -41,7 +42,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["~/assets/css/tailwind.css"],
+  css: ["~/assets/css/main.css"],
 
   postcss: {
     plugins: {
@@ -51,10 +52,8 @@ export default defineNuxtConfig({
   },
   tailwindcss: {
     configPath: "tailwind.config.ts",
-    cssPath: "assets/css/tailwind.css",
+    cssPath: "assets/css/main.css",
   },
-
-
   modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt', '@nuxtjs/i18n'],
   i18n: {
     locales: ['ar', 'en', 'fr'],

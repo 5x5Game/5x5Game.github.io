@@ -35,8 +35,7 @@ const goTo = (link: string) => {
         <div class="header font-extrabold text-4xl text-primary">5X5Game</div>
       </div>
       <div class="flex justify-end gap-2 items-center">
-        <slot name="score" />
-        <slot name="best_score" />
+        <slot name="nav" />
       </div>
     </div>
     <div class="container mt-12">
