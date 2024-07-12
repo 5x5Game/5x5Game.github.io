@@ -2,7 +2,7 @@
   "name": "5x5game",
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build --preset github_pages",
     "dev": "nuxt dev",
     "start": "nuxt start",
     "generate": "nuxt generate",

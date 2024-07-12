@@ -2,10 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2024-07-06",
-
   ssr: true,
   app: {
-    baseURL: '/',
+    baseURL: "/",
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
       title: '5x5Game',
@@ -42,17 +41,13 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["~/assets/css/main.css"],
+  css: ["@/assets/css/main.css"],
 
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
-  },
-  tailwindcss: {
-    configPath: "tailwind.config.ts",
-    cssPath: "assets/css/main.css",
   },
   modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt', '@nuxtjs/i18n'],
   i18n: {
