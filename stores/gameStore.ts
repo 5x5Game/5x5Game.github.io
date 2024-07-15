@@ -23,15 +23,23 @@ export const useGameStore = defineStore("gameStore", {
   },
   actions: {
     setScore(value: number) {
+      if (import.meta.client) localStorage.setItem('score', value.toString())
       this.score = value
     },
     setBestScore(value: number) {
+      if (import.meta.client) localStorage.setItem('best_score', value.toString())
       this.best_score = value
     },
     updateTable(x: number, y: number, value: number) {
       this.table[x][y] = value
+      if (import.meta.client) localStorage.setItem('table', JSON.stringify(this.table))
+    },
+    setTable(value: number[][]) {
+      this.table = value
+      if (import.meta.client) localStorage.setItem('table', JSON.stringify(this.table))
     },
     setLastSelected(value: number) {
+      if (import.meta.client) localStorage.setItem('lastSelected', value.toString())
       this.lastSelected = value
     },
     restart() {
@@ -43,12 +51,43 @@ export const useGameStore = defineStore("gameStore", {
       this.setLastSelected(0);
       this.setScore(0)
       this.cells = []
+      if (import.meta.client) {
+        localStorage.setItem('cells', JSON.stringify(this.cells))
+        localStorage.setItem('table', JSON.stringify(this.table))
+      }
     },
-    setCells(value: GridCell) {
+    updateCells(value: GridCell) {
       this.cells.push({
         index: value.index,
         value: value.value
       })
+      if (import.meta.client) localStorage.setItem('cells', JSON.stringify(this.cells))
+
     },
+    setCells(value: GridCell[]) {
+      this.cells = value
+      if (import.meta.client) localStorage.setItem('cells', JSON.stringify(this.cells))
+
+    },
+    initilize() {
+      if (import.meta.client) {
+        if (localStorage.getItem('score')) {
+          this.setScore(Number(localStorage.getItem('score')))
+        }
+        if (localStorage.getItem('best_score')) {
+          this.setBestScore(Number(localStorage.getItem('best_score')))
+        }
+        if (localStorage.getItem('table')) {
+          this.setTable(JSON.parse(localStorage.getItem('table')!))
+        }
+        if (localStorage.getItem('cells')) {
+          this.setCells(JSON.parse(localStorage.getItem('cells')!))
+        }
+        if (localStorage.getItem('lastSelected')) {
+          this.setLastSelected(Number(localStorage.getItem('lastSelected')))
+        }
+      }
+    }
   }
+
 })

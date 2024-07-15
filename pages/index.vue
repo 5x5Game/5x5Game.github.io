@@ -12,6 +12,11 @@ const size: GridSize = 'normal'
 const cellCount: CellCount = CellCount[size];
 const { cn } = useCn()
 const gameStore = useGameStore()
+
+onBeforeMount(() => {
+  gameStore.initilize()
+})
+
 const { check, numToXy, isGameOver } = useGame(gameStore.getTable, toRef(gameStore, 'getLastSelected'))
 const { formatTime } = useTime()
 
@@ -34,7 +39,7 @@ const cellClicked = (num: number) => {
     intervalId = setInterval(incrementTime, 1000);
   }
   if (check(num, cellCount)) {
-    gameStore.setCells({
+    gameStore.updateCells({
       index: num,
       value: curren_value.value
     })
@@ -82,7 +87,6 @@ const restartGame = () => {
     <template #best_score>
       <MoleculesFTimer class="w-32" :time="best_score" :icon="AtomsIconsFSparkle" icon-color="text-yellow-200" />
     </template>
-
 
     <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="gameStore.getLastSelected">
       <template v-for="(cell, key) of gameStore.getCells" :key="key" v-slot:[`grid-${cell.index}`]>
