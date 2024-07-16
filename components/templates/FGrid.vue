@@ -9,6 +9,7 @@ const props = defineProps<{
   lastSelectedCell: number
 }>()
 const emits = defineEmits(['clicked'])
+const lastSelectedCell = computed(_ => props.lastSelectedCell)
 const sizes: Record<string, string> = {
   easy: `grid-cols-4 w-[400px] h-[400px]`,
   normal: `grid-cols-5 w-[500px] h-[500px]`,
@@ -30,7 +31,8 @@ const cellCount = computed<number>(_ => (
   CellCount[props.size as keyof typeof CellCount] * CellCount[props.size as keyof typeof CellCount]
 ))
 const selectedCell = (num: number) => {
-  if (num === props.lastSelectedCell) {
+  if (num === lastSelectedCell.value) {
+    console.log('ok');
     return 'text-white bg-accent'
   }
   return `bg-accent-200 text-accent`
@@ -42,9 +44,9 @@ const clicked = (num: number) => {
 </script>
 
 <template>
-  <div :class="cn(`grid gap-2 ${gridClass}`)">
+  <div v-if="lastSelectedCell !== -1" :class="cn(`grid gap-2 ${gridClass}`)">
     <div
-      v-for="n of cellCount" :key="n"
+      v-for="(n, key) of cellCount" :key="n + '-' + lastSelectedCell"
       :class="cn(
         `flex items-center justify-center rounded-lg`,
         `${selectedCell(n)} border border-accent ${cellClass}`,

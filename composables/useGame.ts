@@ -1,4 +1,4 @@
-export function useGame(table: number[][], lastSelected: Ref<number>) {
+export function useGame(table: Ref<number[][]>, lastSelected: Ref<number>) {
   const numToXy = (num: number, size: number): number[] => {
     const x = Math.ceil(num / size) - 1
     let y = Math.ceil(num % size) - 1
@@ -12,7 +12,7 @@ export function useGame(table: number[][], lastSelected: Ref<number>) {
   const check = (selected: number, size: number) => {
     const [x, y] = numToXy(selected, size)
     //test if cell is already full
-    if(table[x][y] === 1){
+    if(table.value[x][y] === 1){
       return false;
     }
 
@@ -39,47 +39,47 @@ export function useGame(table: number[][], lastSelected: Ref<number>) {
 
   const isGameOver = (num: number, size: number) => {
     const [a, b] = numToXy(num, size);
-    if(table[a][b] !== 0){
+    if(table.value[a][b] !== 0){
       //Vertical check
       if(a <=2 && b <= 2
-        && (typeof table[a+2][b+2] !== 'undefined')
-        && (table[a+2][b+2] === 0)){
+        && (typeof table.value[a+2][b+2] !== 'undefined')
+        && (table.value[a+2][b+2] === 0)){
         return false;
       }
       else if(a >=2 && b >= 2 &&
-        (typeof table[a-2][b-2] !== 'undefined')
-        && (table[a-2][b-2] === 0)){
+        (typeof table.value[a-2][b-2] !== 'undefined')
+        && (table.value[a-2][b-2] === 0)){
         return false;
       }
       else if(a <=2 && b >= 2
-        && (typeof table[a+2][b-2] !== 'undefined')
-        && (table[a+2][b-2] === 0)){
+        && (typeof table.value[a+2][b-2] !== 'undefined')
+        && (table.value[a+2][b-2] === 0)){
         return false;
       }
       else if(a >=2 && b <= 2
-        && (typeof table[a-2][b+2] !== 'undefined')
-        && (table[a-2][b+2] === 0)){
+        && (typeof table.value[a-2][b+2] !== 'undefined')
+        && (table.value[a-2][b+2] === 0)){
         return false;
       }
       else if(b <=1
-        && (typeof table[a][b+3] !== 'undefined')
-        && (table[a][b+3] === 0)){
+        && (typeof table.value[a][b+3] !== 'undefined')
+        && (table.value[a][b+3] === 0)){
         return false;
       }
       else if(b >= 3
-        && (typeof table[a][b-3] !== 'undefined')
-        && (table[a][b-3] === 0)){
+        && (typeof table.value[a][b-3] !== 'undefined')
+        && (table.value[a][b-3] === 0)){
         return false;
       }
       //Horizontal check
       else if(a <= 1
-        && (typeof table[a+3][b] !== 'undefined')
-        && (table[a+3][b] === 0)){
+        && (typeof table.value[a+3][b] !== 'undefined')
+        && (table.value[a+3][b] === 0)){
         return false;
       }
       else if(a >= 3
-        && (typeof table[a-3][b] !== 'undefined')
-        && (table[a-3][b] === 0)){
+        && (typeof table.value[a-3][b] !== 'undefined')
+        && (table.value[a-3][b] === 0)){
         return false;
       }
     } else {

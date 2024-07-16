@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { useGame } from '@/composables/useGame';
-import { CellCount, type GridSize } from '@/types';
+import { CellCount, type GridCell, type GridSize } from '@/types';
 
 import { useTime } from '@/composables/useTime';
 import AtomsIconsFGame from '@/components/atoms/icons/FGame.vue';
@@ -13,51 +13,54 @@ const cellCount: CellCount = CellCount[size];
 const { cn } = useCn()
 const gameStore = useGameStore()
 
-onBeforeMount(() => {
-  gameStore.initilize()
-})
+gameStore.initialize()
 
-const { check, numToXy, isGameOver } = useGame(gameStore.getTable, toRef(gameStore, 'getLastSelected'))
+const getScore = computed<number>(_ => gameStore.getScore)
+const getBestScore = computed<number>(_ => gameStore.getBestScore)
+const getLastSelected = computed<number>(_ => gameStore.getLastSelected)
+const getCells = computed<GridCell[]>(_ => gameStore.getCells)
+
+const { check, numToXy, isGameOver } = useGame(
+  toRef(gameStore, 'getTable'),
+  toRef(gameStore, 'getLastSelected')
+)
 const { formatTime } = useTime()
 
-const curren_value = ref(1)
 const gameOver = ref(false)
-const score = computed<string>(_ => formatTime(gameStore.getScore))
-const best_score = computed<string>(_ => formatTime(gameStore.getBestScore))
+const score = computed<string>(_ => formatTime(getScore.value))
+const best_score = computed<string>(_ => formatTime(getBestScore.value))
 
 const incrementTime = () => {
-  gameStore.setScore(gameStore.getScore + 1);
+  gameStore.setScore(getScore.value + 1);
 };
 let intervalId: NodeJS.Timeout | null = null;
-if (gameStore.getScore !== 0) {
+if (getScore.value !== 0) {
   intervalId = setInterval(incrementTime, 1000);
 }
 
 const cellClicked = (num: number) => {
-
-  if (gameStore.getCells.length === 0) {
+  if (getCells.value.length === 0) {
     intervalId = setInterval(incrementTime, 1000);
   }
   if (check(num, cellCount)) {
     gameStore.updateCells({
       index: num,
-      value: curren_value.value
+      value: getCells.value.length + 1
     })
     gameStore.setLastSelected(num)
     const [x, y] = numToXy(num, cellCount)
     gameStore.updateTable(x, y, 1)
-    curren_value.value++
 
     if (isGameOver(num, cellCount)) {
       gameOver.value = true
       clearInterval(intervalId!);
     }
-    if (gameStore.getCells.length === 25) {
+    if (getCells.value.length === 25) {
       if (
-        (gameStore.getScore < gameStore.getBestScore && gameStore.getBestScore !== 0)
-        || gameStore.getBestScore === 0
+        (getScore.value < getBestScore.value && getBestScore.value !== 0)
+        || getBestScore.value === 0
       ) {
-        gameStore.setBestScore(gameStore.getScore)
+        gameStore.setBestScore(getScore.value)
       }
     }
   }
@@ -66,7 +69,6 @@ const restartGame = () => {
   clearInterval(intervalId!)
   gameOver.value = false
   gameStore.restart()
-  curren_value.value = 1
 }
 </script>
 
@@ -88,25 +90,25 @@ const restartGame = () => {
       <MoleculesFTimer class="w-32" :time="best_score" :icon="AtomsIconsFSparkle" icon-color="text-yellow-200" />
     </template>
 
-    <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="gameStore.getLastSelected">
-      <template v-for="(cell, key) of gameStore.getCells" :key="key" v-slot:[`grid-${cell.index}`]>
+    <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="getLastSelected">
+      <template v-for="(cell, key) of getCells" :key="key" v-slot:[`grid-${cell.index}`]>
         <span :class="cn(`text-5xl font-bold`)">{{ cell.value }}</span>
       </template>
     </TemplatesFGrid>
 
-    <MoleculesFPopupLayer v-if="gameOver && gameStore.getCells.length !== 25"
+    <MoleculesFPopupLayer v-if="gameOver && getCells.length !== 25"
                           :text="$t('game_over')"
                           @button:click="restartGame">
       <p class="text-lg">{{ $t('reached') }}
-        <span class="text-rose-600">{{ gameStore.getCells.length }}</span> {{ $t('in') }} <span class="text-rose-600">{{ score }}</span>
+        <span class="text-rose-600">{{ getCells.length }}</span> {{ $t('in') }} <span class="text-rose-600">{{ score }}</span>
       </p>
       <p class="text-lg">{{ $t('good_luck') }}</p>
     </MoleculesFPopupLayer>
-    <MoleculesFPopupLayer v-if="gameStore.getCells.length === 25"
+    <MoleculesFPopupLayer v-if="getCells.length === 25"
                           :text="$t('you_won')"
                           @button:click="restartGame">
       <p class="text-lg">{{ $t('congratulations') }}</p>
-      <p>{{ $t('got') }} <span class="text-rose-600">{{ gameStore.getCells.length }}</span> {{ $t('in') }} <span class="text-rose-600">{{ score }}</span>
+      <p>{{ $t('got') }} <span class="text-rose-600">{{ getCells.length }}</span> {{ $t('in') }} <span class="text-rose-600">{{ score }}</span>
       </p>
     </MoleculesFPopupLayer>
     </NuxtLayout>

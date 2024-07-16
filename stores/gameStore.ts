@@ -11,7 +11,7 @@ export const useGameStore = defineStore("gameStore", {
       [0,0,0,0,0],
       [0,0,0,0,0],
     ],
-    lastSelected: 0,
+    lastSelected: -1,
     cells: [] as GridCell[]
   }),
   getters: {
@@ -69,7 +69,7 @@ export const useGameStore = defineStore("gameStore", {
       if (import.meta.client) localStorage.setItem('cells', JSON.stringify(this.cells))
 
     },
-    initilize() {
+    initialize() {
       if (import.meta.client) {
         if (localStorage.getItem('score')) {
           this.setScore(Number(localStorage.getItem('score')))
@@ -85,6 +85,8 @@ export const useGameStore = defineStore("gameStore", {
         }
         if (localStorage.getItem('lastSelected')) {
           this.setLastSelected(Number(localStorage.getItem('lastSelected')))
+        } else {
+          this.setLastSelected(0)
         }
       }
     }
