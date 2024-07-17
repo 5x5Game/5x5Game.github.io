@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import AtomsIconsFViewList from '@/components/atoms/icons/FViewList.vue';
+import type { Direction } from '@/types';
 
 const { locale, setLocale } = useI18n()
 const localeRoute = useLocaleRoute()
 const { t } = useI18n()
 
 await setLocale(locale.value)
-
+const direction = computed<Direction>(_ => {
+  if (locale.value === 'ar') {
+    return 'left'
+  }
+  return 'right'
+})
 useHead({
   htmlAttrs: {
     lang: locale.value,
@@ -41,7 +47,12 @@ const goTo = (link: string) => {
     <div class="container mt-12">
       <slot />
     </div>
-    <MoleculesHoverList :icon="AtomsIconsFViewList" :items="items" @li:click="goTo" />
+    <MoleculesHoverList
+      :icon="AtomsIconsFViewList"
+      :items="items"
+      @li:click="goTo"
+      :direction
+    />
 
   </div>
 </template>

@@ -8,3 +8,4 @@ export interface GridCell {
   index: number;
   value: number;
 }
+export type Direction = 'left' | 'right';

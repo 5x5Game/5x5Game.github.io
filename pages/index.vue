@@ -13,7 +13,7 @@ const cellCount: CellCount = CellCount[size];
 const { cn } = useCn()
 const gameStore = useGameStore()
 
-gameStore.initialize()
+onBeforeMount(() => gameStore.initialize())
 
 const getScore = computed<number>(_ => gameStore.getScore)
 const getBestScore = computed<number>(_ => gameStore.getBestScore)

@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9e8b5a17-166d-4c92-9f72-778aba6d1ba9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/templates/FGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/templates/FGrid.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composables/useGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/composables/useGame.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/molecules/HoverList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/molecules/HoverList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/game.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/game.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

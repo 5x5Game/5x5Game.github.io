@@ -1,13 +1,22 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
+import type { Direction } from '@/types';
 
-defineProps<{
+const { cn } = useCn()
+
+const props = defineProps<{
   items: Record<string, string>;
   icon?: Component;
   text?: string;
+  direction?: Direction;
 }>()
 const emits = defineEmits(['li:click'])
-
+const direction = computed(_ => {
+  if (props.direction === 'left') {
+    return 'left-0'
+  }
+  return 'right-0'
+})
 const showList = ref(false)
 const click = (item: string) => {
   showList.value = false
@@ -16,7 +25,7 @@ const click = (item: string) => {
 </script>
 
 <template>
-  <div class="fixed bottom-0 right-0">
+  <div :class="cn(`fixed bottom-0 ${direction}`)">
     <div class="flex justify-end w-60">
       <div class="flex items-end p-4 m-4">
         <AtomsFButton
