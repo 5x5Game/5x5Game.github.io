@@ -30,7 +30,7 @@
 
     <h2 class="text-3xl font-bold my-5">{{ $t('tutorial.gameplay') }}</h2>
 
-    <p>{{ $t('tutorial.gameplay_1') }}</p>
+    <p class="mb-12 pb-12">{{ $t('tutorial.gameplay_1') }}</p>
 
   </NuxtLayout>
 </template>

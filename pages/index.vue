@@ -12,8 +12,19 @@ const size: GridSize = 'normal'
 const cellCount: CellCount = CellCount[size];
 const { cn } = useCn()
 const gameStore = useGameStore()
+let intervalId: NodeJS.Timeout | null = null;
 
-onBeforeMount(() => gameStore.initialize())
+onBeforeMount(() => {
+  gameStore.initialize()
+  console.log(getScore.value);
+  if (getScore.value !== 0) {
+    console.log('why');
+    intervalId = setInterval(incrementTime, 1000);
+  }
+})
+onBeforeUnmount(() => {
+  clearInterval(intervalId!)
+})
 
 const getScore = computed<number>(_ => gameStore.getScore)
 const getBestScore = computed<number>(_ => gameStore.getBestScore)
@@ -33,11 +44,6 @@ const best_score = computed<string>(_ => formatTime(getBestScore.value))
 const incrementTime = () => {
   gameStore.setScore(getScore.value + 1);
 };
-let intervalId: NodeJS.Timeout | null = null;
-if (getScore.value !== 0) {
-  intervalId = setInterval(incrementTime, 1000);
-}
-
 const cellClicked = (num: number) => {
   if (getCells.value.length === 0) {
     intervalId = setInterval(incrementTime, 1000);

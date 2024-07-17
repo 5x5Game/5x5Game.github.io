@@ -25,7 +25,7 @@ const click = (item: string) => {
 </script>
 
 <template>
-  <div :class="cn(`fixed bottom-0 ${direction}`)">
+  <div :class="cn(`fixed bottom-0 ${direction} z-50`)">
     <div class="flex justify-end w-60">
       <div class="flex items-end p-4 m-4">
         <AtomsFButton

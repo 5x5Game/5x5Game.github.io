@@ -32,7 +32,6 @@ const cellCount = computed<number>(_ => (
 ))
 const selectedCell = (num: number) => {
   if (num === lastSelectedCell.value) {
-    console.log('ok');
     return 'text-white bg-accent'
   }
   return `bg-accent-200 text-accent`

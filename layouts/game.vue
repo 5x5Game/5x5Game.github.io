@@ -12,6 +12,7 @@ const direction = computed<Direction>(_ => {
   return 'right'
 })
 await setLocale(locale.value)
+const currentDate = new Date().getFullYear();
 useHead({
   htmlAttrs: {
     lang: locale.value,
@@ -51,5 +52,10 @@ const goTo = (link: string) => {
       @li:click="goTo"
       :direction
     />
+  </div>
+  <div class="absolute w-full left-0 right-0 bottom-5">
+    <p class="flex justify-center">
+      © 2014–{{ currentDate }} <a href="#" class="px-4" target="_blank">Karim Oulad Chalha</a>
+    </p>
   </div>
 </template>
