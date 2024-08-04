@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9e8b5a17-166d-4c92-9f72-778aba6d1ba9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -339,7 +338,7 @@
       <workItem from="1544328047155" duration="1209000" />
       <workItem from="1544804995378" duration="1812000" />
       <workItem from="1721730748533" duration="1460000" />
-      <workItem from="1722771199346" duration="4960000" />
+      <workItem from="1722771199346" duration="6792000" />
     </task>
     <servers />
   </component>

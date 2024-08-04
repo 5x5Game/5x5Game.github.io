@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   compatibilityDate: "2024-07-06",
   ssr: true,
   routeRules: {
@@ -53,10 +53,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt', '@nuxtjs/i18n'],
+  modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt', '@nuxtjs/i18n', 'nuxt-gtag'],
   i18n: {
     locales: ['ar', 'en', 'fr'],
     defaultLocale: 'en',
+  },
+  gtag: {
+    id: 'G-KJT39XC35V',
+    config: {
+      page_title: '5x5Game'
+    },
   },
   typescript: {
     tsConfig: {
