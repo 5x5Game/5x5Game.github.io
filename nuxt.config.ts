@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   compatibilityDate: "2024-07-06",
   ssr: true,
+  routeRules: {
+    '/': { static: true },
+    '/**': { static: true }
+  },
   app: {
     baseURL: "/",
     layoutTransition: { name: 'layout', mode: 'out-in' },
