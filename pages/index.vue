@@ -16,9 +16,7 @@ let intervalId: NodeJS.Timeout | null = null;
 
 onBeforeMount(() => {
   gameStore.initialize()
-  console.log(getScore.value);
   if (getScore.value !== 0) {
-    console.log('why');
     intervalId = setInterval(incrementTime, 1000);
   }
 })
