@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9e8b5a17-166d-4c92-9f72-778aba6d1ba9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/atoms/FButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/atoms/FButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/molecules/FTimer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/molecules/FTimer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/templates/FGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/templates/FGrid.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/game.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/game.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/issues.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/issues.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/molecules/HoverList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/molecules/HoverList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,6 +269,7 @@
     "npm.dev --host 0.0.0.0.executor": "Run",
     "npm.dev --host.executor": "Run",
     "npm.dev.executor": "Run",
+    "npm.dev:host.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "Errors",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
@@ -294,7 +290,7 @@
       <recent name="$PROJECT_DIR$/components/molecules" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.dev:host">
     <configuration name="clear" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -315,8 +311,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="dev:host" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev:host" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev:host" />
         <item itemvalue="npm.clear" />
       </list>
     </recent_temporary>
@@ -344,7 +351,8 @@
       <workItem from="1544328047155" duration="1209000" />
       <workItem from="1544804995378" duration="1812000" />
       <workItem from="1721730748533" duration="1460000" />
-      <workItem from="1722771199346" duration="28173000" />
+      <workItem from="1722771199346" duration="30513000" />
+      <workItem from="1722891622063" duration="3860000" />
     </task>
     <servers />
   </component>

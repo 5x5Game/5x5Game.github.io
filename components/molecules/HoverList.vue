@@ -45,7 +45,8 @@ const click = (item: string) => {
         >
           <li v-for="(item, key, index) of items" :key="index"
               class="py-1 px-8 hover:bg-primary hover:text-white w-full transition cursor-pointer"
-              @click="click(key)"
+              @click="() => click(key)"
+              @touchstart="() => click(key)"
           >
             {{ item }}
           </li>
