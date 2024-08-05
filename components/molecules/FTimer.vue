@@ -12,12 +12,12 @@ defineProps<{
 
 <template>
   <div :class="cn(
-    'flex justify-between gap-2 items-center rounded-2xl bg-primary text-white',
-    'p-4',
+    'flex justify-end md:justify-between gap-2 items-center rounded-2xl md:bg-primary md:text-white text-primary',
+    'md:p-4',
     $options.class
     )">
     <component v-if="icon" :is="icon" :class="cn('text-white h-4 w-4', iconColor)" />
-    {{ time }}
+    <span class="">{{ time }}</span>
   </div>
 </template>
 

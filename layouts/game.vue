@@ -35,12 +35,12 @@ const goTo = (link: string) => {
 
 <template>
   <div class="bg-white flex flex-col justify-start items-center gap-6 pt-7 px-4 h-lvh w-lvw">
-    <div class="flex justify-between items-center gap-2 w-full px-8">
+    <div class="flex justify-between items-center gap-2 w-full lg:px-8 md:px-4 sm:px-2">
       <div class="flex justify-start gap-2 items-center">
-        <div class="header font-extrabold text-4xl text-primary">5X5Game</div>
+        <div class="header font-extrabold text-xl md:text-4xl text-primary">5X5Game</div>
         <slot name="start" />
       </div>
-      <div class="flex justify-end gap-2 items-center">
+      <div class="flex flex-col md:flex-row justify-end md:gap-2 items-center">
         <slot name="score" />
         <slot name="best_score" />
       </div>

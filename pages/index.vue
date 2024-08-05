@@ -88,17 +88,19 @@ const restartGame = () => {
       />
     </template>
     <template #score>
-      <MoleculesFTimer class="w-32" :time="score" :icon="AtomsIconsFClock"  />
+      <MoleculesFTimer class="w-32" :time="score" :icon="AtomsIconsFClock" icon-color="!text-primary md:!text-white"  />
     </template>
     <template #best_score>
-      <MoleculesFTimer class="w-32" :time="best_score" :icon="AtomsIconsFSparkle" icon-color="text-yellow-200" />
+      <MoleculesFTimer class="w-32" :time="best_score" :icon="AtomsIconsFSparkle" icon-color="md:!text-yellow-200 !text-primary" />
     </template>
 
-    <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="getLastSelected">
-      <template v-for="(cell, key) of getCells" :key="key" v-slot:[`grid-${cell.index}`]>
-        <span :class="cn(`text-5xl font-bold`)">{{ cell.value }}</span>
-      </template>
-    </TemplatesFGrid>
+    <div class="flex w-full justify-center py-12">
+      <TemplatesFGrid :size @clicked="cellClicked" :last-selected-cell="getLastSelected">
+        <template v-for="(cell, key) of getCells" :key="key" v-slot:[`grid-${cell.index}`]>
+          <span :class="cn(`text-3xl md:text-5xl font-bold`)">{{ cell.value }}</span>
+        </template>
+      </TemplatesFGrid>
+    </div>
 
     <MoleculesFPopupLayer v-if="gameOver && getCells.length !== 25"
                           :text="$t('game_over')"

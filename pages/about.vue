@@ -19,6 +19,6 @@
     <li><span class="font-bold">{{ $t('about.no_hesitation') }}:</span> {{ $t('about.game_progresses') }}</li>
   </ul>
 
-  <h3 class="text-2xl my-6">{{ $t('about.ready_to_test') }}</h3>
+  <h3 class="text-2xl my-6 pb-12">{{ $t('about.ready_to_test') }}</h3>
   </NuxtLayout>
 </template>
