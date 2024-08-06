@@ -27,20 +27,20 @@ export default defineNuxtConfig({
         { property: 'og:description', content: 'Challenge your mind with a unique puzzle experience! In 5x5GAME, navigate a grid using strategic steps to reach the goal number: 25.' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://5x5game.github.io/' },
-        { property: 'og:image', content: 'https://5x5game.github.io/public/images/preview.png' },
+        { property: 'og:image', content: 'https://5x5game.github.io/images/preview.png' },
 
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: '5x5Game' },
         { name: 'twitter:description', content: 'Challenge your mind with a unique puzzle experience! In 5x5GAME, navigate a grid using strategic steps to reach the goal number: 25.' },
-        { name: 'twitter:image', content: 'https://5x5game.github.io/public/images/preview.png' },
+        { name: 'twitter:image', content: 'https://5x5game.github.io/images/preview.png' },
         { name: 'twitter:site', content: '@5x5game' },
 
 
       ],
       link: [
-        { rel: 'apple-touch-icon', href: 'assets/images/logo.png' },
-        { rel: 'icon', type: 'image/x-icon', href: 'assets/images/favicon.ico' },
+        { rel: 'apple-touch-icon', href: '/images/logo.png' },
+        { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' },
       ]
     },
   },

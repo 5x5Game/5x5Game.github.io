@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "nuxt generate && npx gh-pages -d dist",
+    "deploy": "nuxt generate && npx gh-pages -d dist --dotfiles true",
     "clear": "npx nuxi cleanup ."
   },
   "dependencies": {
